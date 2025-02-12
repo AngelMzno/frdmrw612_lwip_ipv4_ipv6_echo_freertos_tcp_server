@@ -1,0 +1,9 @@
+../source/shell_task.c:82:13:call_socket_task_init	32	static
+../source/shell_task.c:103:23:echo_tcp_client	24	static
+../source/shell_task.c:113:23:echo_tcp_server	24	static
+../source/shell_task.c:123:23:echo_udp	24	static
+../source/shell_task.c:133:23:end	24	static
+../source/shell_task.c:143:23:print_ip_cfg	24	static
+../source/shell_task.c:155:13:shell_task	24	static
+../source/shell_task.c:182:6:shell_task_init	32	static
+../source/shell_task.c:192:6:shell_task_set_mode	16	static
