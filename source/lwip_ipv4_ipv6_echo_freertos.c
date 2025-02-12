@@ -29,6 +29,7 @@
 #include "lwip/sockets.h"
 
 #include "shell_task.h"
+#include "simple_tcp_echo.h"
 
 /*******************************************************************************
  * Definitions
@@ -164,18 +165,16 @@ static void stack_init(void *arg)
 /*!
  * @brief Main function
  */
+
 int main(void)
 {
     BOARD_InitHardware();
 
-    /* Initialize lwIP from thread */
-    if (sys_thread_new("main", stack_init, NULL, INIT_THREAD_STACKSIZE, INIT_THREAD_PRIO) == NULL)
-    {
-        LWIP_ASSERT("main(): Task creation failed.", 0);
-    }
+    STE_network_interface_init();
 
     vTaskStartScheduler();
 
-    /* Will not get here unless a task calls vTaskEndScheduler ()*/
+    // Will not get here unless a task calls vTaskEndScheduler ()
     return 0;
 }
+
